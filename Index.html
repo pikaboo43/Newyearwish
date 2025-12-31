@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy New Year My Love ❤️</title>
+
+    <!-- ANDROID VIEWPORT FIX -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom right, #ffb6c1, #ffe4e1);
+            text-align: center;
+            color: #b30059;
+        }
+
+        header {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .heart {
+            font-size: 2.5em;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .message {
+            font-size: 1.3em;
+            margin: 20px auto;
+            max-width: 600px;
+            background: #fff0f5;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+
+        .card {
+            width: 220px;
+            height: 160px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card.active .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+            backface-visibility: hidden;
+            text-align: center;
+        }
+
+        .card-front {
+            background: #ff69b4;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        .card-back {
+            background: #fff0f5;
+            color: #b30059;
+            font-size: 1.1em;
+            transform: rotateY(180deg);
+        }
+
+        .mega-card {
+            width: 95%;
+            max-width: 320px;
+            height: 220px;
+            margin: 30px auto;
+            perspective: 1200px;
+        }
+
+        .mega-card .card-front {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            font-size: 1.4em;
+        }
+
+        .mega-card .card-back {
+            font-size: 1.1em;
+            padding: 20px;
+        }
+
+        /* HEART BURST */
+        .burst-heart {
+            position: fixed;
+            font-size: 24px;
+            animation: burst 1.2s ease-out forwards;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        @keyframes burst {
+            0% {
+                transform: scale(0.5) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.4) translateY(-120px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Happy New Year My Love 💕</h1>
+    <div class="heart">❤️❤️❤️</div>
+</header>
+
+<div class="message">
+    My love,<br><br>
+    Another year with you means more smiles, more memories,
+    and more reasons to fall in love with you every single day 🥰<br><br>
+    Thank you for being my happiness, my comfort, and my forever.
+    I can’t wait to create many more beautiful moments with you 💖<br><br>
+    <b>Happy New Year, Janu! 🎉✨</b>
+</div>
+
+<h2>💌 Tap the Cards, My Love 💌</h2>
+
+<div class="cards">
+    <div class="card" onclick="toggleCard(this)" ontouchstart="toggleCard(this)">
+        <div class="card-inner">
+            <div class="card-front">💖 Tap Me 💖</div>
+            <div class="card-back">You are my favorite person and my happiest place 🥰</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)" ontouchstart="toggleCard(this)">
+        <div class="card-inner">
+            <div class="card-front">💕 Open 💕</div>
+            <div class="card-back">Every New Year feels special because I have YOU ❤️</div>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)" ontouchstart="toggleCard(this)">
+        <div class="card-inner">
+            <div class="card-front">💝 Surprise 💝</div>
+            <div class="card-back">I promise to love you more and more every day 😘</div>
+        </div>
+    </div>
+</div>
+
+<h2>🌹 One Last Thing… 🌹</h2>
+
+<div class="card mega-card" onclick="openMega(this)" ontouchstart="openMega(this)">
+    <div class="card-inner">
+        <div class="card-front">❤️ Tap for Final Surprise ❤️</div>
+        <div class="card-back">
+            I LOVE YOU ❤️<br><br>
+            More than words,<br>
+            more than time,<br>
+            more than anything 💞<br><br>
+            Happy New Year, my forever 🥰✨
+        </div>
+    </div>
+</div>
+
+<footer>
+    Forever Yours 💞<br>
+    With all my love 💖
+</footer>
+
+<!-- ANDROID SAFE SCRIPT -->
+<script>
+function toggleCard(card) {
+    card.classList.toggle("active");
+}
+
+function openMega(card) {
+    card.classList.toggle("active");
+    heartBurst();
+}
+
+function heartBurst() {
+    for (let i = 0; i < 12; i++) {
+        let heart = document.createElement("div");
+        heart.className = "burst-heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = (window.innerHeight / 2) + "px";
+        heart.style.fontSize = (18 + Math.random() * 20) + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1200);
+    }
+}
+</script>
+
+</body>
+
+</html>
